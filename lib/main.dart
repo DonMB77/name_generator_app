@@ -46,7 +46,7 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         children: [
           Text('A random AWESOME idea:'),
-          Text(pair.asLowerCase),
+          BigCart(pair: pair),
           ElevatedButton(
             onPressed: () {
               appState.getNext();
@@ -56,5 +56,19 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class BigCart extends StatelessWidget {
+  const BigCart({
+    super.key,
+    required this.pair,
+  });
+
+  final WordPair pair;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(pair.asLowerCase);
   }
 }
